@@ -38,10 +38,12 @@ function print(value: any): void {
 }
 
 // Function types
-function calcualte(
+function calculate(
   a: number,
   b: number,
   operation: (a: number, b: number) => number
 ): number {
   return operation(a, b);
 }
+
+calculate(10, 20, add);
