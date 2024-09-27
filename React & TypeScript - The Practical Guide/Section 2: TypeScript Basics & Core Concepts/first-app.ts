@@ -48,3 +48,14 @@ type User = {
   isAdmin: boolean;
   id: string | number;
 };
+
+// Defining objects types with interfaces
+interface Credentials {
+  password: string;
+  email: string;
+}
+let credentials: Credentials;
+credentials = {
+  password: "1234",
+  email: "",
+};
