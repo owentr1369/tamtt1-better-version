@@ -92,3 +92,10 @@ admin2 = {
   userName: "Max",
   permissions: ["read", "write"],
 };
+
+// Being more specific with literal types
+let role: "admin" | "user" | "guest"; // 'admin' | 'user' | 'guest'
+role = "admin";
+role = "user";
+role = "guest";
+// role = 'superuser'; // Type '"superuser"' is not assignable to type '"admin" | "user" | "guest"'.
