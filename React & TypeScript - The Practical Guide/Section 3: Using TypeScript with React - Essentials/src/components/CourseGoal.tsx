@@ -1,12 +1,13 @@
-import React from 'react'
-
-const CourseGoal = () => {
+const CourseGoal = ({ title, description }: {
+    title: string,
+    description: string
+}) => {
     return (
         <article>
             <div>
-                <h2>TITLE</h2>
+                <h2>{title}</h2>
                 <div>
-                    <p>DESCRIPTION</p>
+                    <p>{description}</p>
                 </div>
             </div>
             <button>Delete</button>
