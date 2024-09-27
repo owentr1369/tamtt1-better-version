@@ -5,16 +5,11 @@ let userAge: number = 30;
 let isValid: boolean = true;
 
 // Union type
-let userID: string | number = "abc";
+let userID: StringOrNum = "abc";
 userID = 123;
 
 // Object types
-let user: {
-  name: string;
-  age: number;
-  isAdmin: boolean;
-  id: string | number;
-};
+let user: User;
 user = {
   name: "Max",
   age: 30,
@@ -25,8 +20,8 @@ user = {
 // Array types
 let hobbies: string[] = ["Sports", "Cooking"];
 let favNumbers: number[] = [1, 2, 3];
-let favThings: (string | number)[] = ["Sports", 1];
-let favThings2: Array<string | number> = ["Sports", 1];
+let favThings: StringOrNum[] = ["Sports", 1];
+let favThings2: Array<StringOrNum> = ["Sports", 1];
 
 // Adding types to functions - parameters & return values
 function add(a: number, b: number): number {
@@ -38,12 +33,18 @@ function print(value: any): void {
 }
 
 // Function types
-function calculate(
-  a: number,
-  b: number,
-  operation: (a: number, b: number) => number
-): number {
+function calculate(a: number, b: number, operation: operationFn): number {
   return operation(a, b);
 }
 
 calculate(10, 20, add);
+
+// Custom types / type aliases
+type operationFn = (a: number, b: number) => number;
+type StringOrNum = string | number;
+type User = {
+  name: string;
+  age: number;
+  isAdmin: boolean;
+  id: string | number;
+};
