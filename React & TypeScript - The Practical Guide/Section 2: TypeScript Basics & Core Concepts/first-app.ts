@@ -1,3 +1,7 @@
-let userName = "Max";
+let userName: string = "Max";
 
-userName = 2; // Error: Type '2' is not assignable to type 'string'.
+// userName = 34
+// Type 'number' is not assignable to type 'string'.
+
+let userAge: number = 30;
+let isValid: boolean = true;
