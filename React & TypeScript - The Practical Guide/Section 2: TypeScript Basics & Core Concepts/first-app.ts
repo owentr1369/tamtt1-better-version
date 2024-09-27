@@ -26,3 +26,4 @@ user = {
 let hobbies: string[] = ["Sports", "Cooking"];
 let favNumbers: number[] = [1, 2, 3];
 let favThings: (string | number)[] = ["Sports", 1];
+let favThings2: Array<string | number> = ["Sports", 1];
