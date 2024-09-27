@@ -111,3 +111,33 @@ function performAction(action: string | number, role: Role) {
     // perform guest action
   }
 }
+
+// Making sense of generic types
+let roles: Array<Role>;
+roles = ["admin", "user", "guest"];
+type DataStorage<T> = {
+  storage: T[];
+  add: (item: T) => void;
+};
+const textStorage: DataStorage<string> = {
+  storage: ["Hi", "Hello"],
+  add: (item) => {
+    this.storage.push(item);
+  },
+};
+const userStorage: DataStorage<User> = {
+  storage: [{ name: "Max", age: 30, isAdmin: true, id: 123 }],
+  add: (user) => {
+    this.storage.push(user);
+  },
+};
+function merge<T, U>(a: T, b: U) {
+  return {
+    ...a,
+    ...b,
+  };
+}
+const newUser = merge<{ name: string }, { age: number }>(
+  { name: "Max" },
+  { age: 30 }
+);
