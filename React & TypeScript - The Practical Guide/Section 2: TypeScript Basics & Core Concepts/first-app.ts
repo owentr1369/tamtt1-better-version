@@ -59,3 +59,16 @@ credentials = {
   password: "1234",
   email: "",
 };
+
+// Interfaces vs Custom types
+class AuthCredentials implements Credentials {
+  password: string;
+  email: string;
+  userName: string;
+}
+
+function login(credentials: Credentials) {
+  // login logic
+}
+
+login(new AuthCredentials());
