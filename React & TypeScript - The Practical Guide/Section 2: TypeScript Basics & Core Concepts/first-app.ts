@@ -5,3 +5,7 @@ let userName: string = "Max";
 
 let userAge: number = 30;
 let isValid: boolean = true;
+
+// Union type
+let userID: string | number = "abc";
+userID = 123;
