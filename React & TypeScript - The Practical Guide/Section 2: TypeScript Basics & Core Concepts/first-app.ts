@@ -94,8 +94,20 @@ admin2 = {
 };
 
 // Being more specific with literal types
-let role: "admin" | "user" | "guest"; // 'admin' | 'user' | 'guest'
+type Role = "admin" | "user" | "guest";
+let role: Role; // 'admin' | 'user' | 'guest'
 role = "admin";
 role = "user";
 role = "guest";
 // role = 'superuser'; // Type '"superuser"' is not assignable to type '"admin" | "user" | "guest"'.
+
+// Adding types guards
+function performAction(action: string | number, role: Role) {
+  if (role === "admin" && typeof action === "string") {
+    // perform admin action
+  } else if (role === "user") {
+    // perform user action
+  } else {
+    // perform guest action
+  }
+}
