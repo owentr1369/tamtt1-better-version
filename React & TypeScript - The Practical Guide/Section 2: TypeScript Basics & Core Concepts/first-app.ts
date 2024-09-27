@@ -21,3 +21,8 @@ user = {
   isAdmin: true,
   id: 123,
 };
+
+// Array types
+let hobbies: string[] = ["Sports", "Cooking"];
+let favNumbers: number[] = [1, 2, 3];
+let favThings: (string | number)[] = ["Sports", 1];
