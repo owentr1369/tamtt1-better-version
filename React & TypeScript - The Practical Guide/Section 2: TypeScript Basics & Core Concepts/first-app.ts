@@ -36,3 +36,12 @@ function add(a: number, b: number): number {
 function print(value: any): void {
   console.log(value);
 }
+
+// Function types
+function calcualte(
+  a: number,
+  b: number,
+  operation: (a: number, b: number) => number
+): number {
+  return operation(a, b);
+}
