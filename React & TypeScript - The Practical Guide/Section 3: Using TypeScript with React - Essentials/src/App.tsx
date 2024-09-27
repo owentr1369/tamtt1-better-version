@@ -1,12 +1,11 @@
 import './App.css'
+import CourseGoal from './components/CourseGoal'
 
 function App() {
   return (
-    <>
-
-      <h1>Vite + React</h1>
-
-    </>
+    <main>
+      <CourseGoal />
+    </main>
   )
 }
 
