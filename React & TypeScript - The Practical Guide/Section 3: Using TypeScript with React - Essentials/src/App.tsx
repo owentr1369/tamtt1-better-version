@@ -29,7 +29,7 @@ function App() {
     setGoals((prevGoals) => {
       return prevGoals.filter((goal) => goal.id !== id);
     });
-  }
+  };
 
   return (
     <main>
