@@ -1,9 +1,14 @@
 import { type PropsWithChildren } from "react"
 
 
-type CourseGoalProps = PropsWithChildren<{ title: string }>
+type CourseGoalProps = PropsWithChildren<{ title: string, id: number, handleDeleteGoal: (id: number) => void }>
 
-const CourseGoal = ({ title, children }: CourseGoalProps) => {
+
+const CourseGoal = ({ title, id, children, handleDeleteGoal }: CourseGoalProps) => {
+
+    const onDelete = (id: number) => {
+        handleDeleteGoal(id)
+    }
     return (
         <article>
             <div>
@@ -12,7 +17,7 @@ const CourseGoal = ({ title, children }: CourseGoalProps) => {
                     {children}
                 </div>
             </div>
-            <button>Delete</button>
+            <button onClick={() => onDelete(id)}>Delete</button>
         </article>
     )
 }

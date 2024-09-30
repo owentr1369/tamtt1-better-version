@@ -3,6 +3,7 @@ import { type CourseGoal as CGoal } from "../App";
 
 type CourseGoal = {
     goals: CGoal[]
+    handleDeleteGoal: (id: number) => void
 };
 
 const CourseGoalList = (props: CourseGoal) => {
@@ -10,7 +11,7 @@ const CourseGoalList = (props: CourseGoal) => {
         <ul>
             {props.goals.map((goal) => (
                 <li key={goal.id}>
-                    <CourseGoal title={goal.title}>
+                    <CourseGoal title={goal.title} handleDeleteGoal={props.handleDeleteGoal} id={goal.id}>
                         <p>{goal.description}</p>
                     </CourseGoal>
                 </li>
