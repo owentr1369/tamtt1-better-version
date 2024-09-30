@@ -19,7 +19,7 @@ const CourseGoalList = (props: CourseGoal) => {
   let warningBox: ReactNode;
   if (props.goals.length >= 4) {
     warningBox = (
-      <InfoBox mode="warning">
+      <InfoBox mode="warning" severity="high">
         <p>Too many goals. Delete some.</p>
       </InfoBox>
     );
