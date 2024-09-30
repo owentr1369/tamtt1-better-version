@@ -1,4 +1,4 @@
-import { type PropsWithChildren, type ReactNode } from "react"
+import { type PropsWithChildren } from "react"
 
 
 type CourseGoalProps = PropsWithChildren<{ title: string }>
