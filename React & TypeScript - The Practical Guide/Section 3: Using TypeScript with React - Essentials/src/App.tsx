@@ -14,7 +14,10 @@ function App() {
   const [goals, setGoals] = useState<CourseGoal[]>([])
 
   const handleAddGoal = () => {
-    console.log('Add Goal')
+    setGoals((prevGoals) => {
+      const newGoal: CourseGoal = { title: 'Learn React + TS', description: 'Learn it in depth', id: Math.random() }
+      return [...prevGoals, newGoal]
+    })
   }
 
   return (
@@ -23,9 +26,19 @@ function App() {
         <h1>Your Course Goals</h1>
       </Header>
       <button onClick={() => handleAddGoal()}>Add Goal</button>
-      <CourseGoal title='Learning React with TS'>
+      <ul>
+        {goals.map(goal => (
+          <li key={goal.id}>
+            <CourseGoal title={goal.title}>
+              <p>{goal.description}</p>
+            </CourseGoal>
+          </li>
+        ))}
+      </ul>
+
+      {/* <CourseGoal title='Learning React with TS'>
         <p>Learn it from the ground up</p>
-      </CourseGoal>
+      </CourseGoal> */}
     </main>
   )
 }
