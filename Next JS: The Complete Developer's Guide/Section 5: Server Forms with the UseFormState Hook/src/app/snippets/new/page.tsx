@@ -22,7 +22,6 @@ export default function SnippetCreatePage() {
             id="title"
           />
         </div>
-
         <div className="flex gap-4">
           <label className="w-12" htmlFor="code">
             Code
@@ -33,7 +32,11 @@ export default function SnippetCreatePage() {
             id="code"
           />
         </div>
-        <div>{formState.message}</div>
+        {formState.message ? (
+          <div className="m-y-2 p-2 bg-red-200 rounded border-red-400 text-center">
+            {formState.message}
+          </div>
+        ) : null}
         <button type="submit" className="rounded p-2 bg-blue-200">
           Create
         </button>
