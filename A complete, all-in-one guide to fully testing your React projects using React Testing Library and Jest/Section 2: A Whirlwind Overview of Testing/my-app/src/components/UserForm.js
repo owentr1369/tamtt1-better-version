@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./userForm.css";
 
-const UserForm = () => {
+const UserForm = ({ onAddUser }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
@@ -15,10 +15,7 @@ const UserForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data Submitted: ", {
-      name,
-      email,
-    });
+    onAddUser({ name, email });
   };
 
   return (
