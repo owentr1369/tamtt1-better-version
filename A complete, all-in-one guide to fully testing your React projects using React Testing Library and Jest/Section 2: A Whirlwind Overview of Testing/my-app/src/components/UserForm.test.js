@@ -15,3 +15,21 @@ test("It shows two inputs and a button", () => {
   expect(emailInput).toBeInTheDocument();
   expect(button).toBeInTheDocument();
 });
+
+test("It calls the onAddUser function when the form is submitted", () => {
+  // Arrange
+  const onAddUser = jest.fn();
+  render(<UserForm onAddUser={onAddUser} />);
+  const nameInput = screen.getByLabelText(/name/i);
+  const emailInput = screen.getByLabelText(/email/i);
+  const button = screen.getByRole("button", { name: /submit/i });
+  // Act
+  user.type(nameInput, "John Doe");
+  user.type(emailInput, "johndoe@gmail.com");
+  user.click(button);
+  // Assert
+  expect(onAddUser).toHaveBeenCalledWith({
+    name: "John Doe",
+    email: "johndoe@gmail.com",
+  });
+});
